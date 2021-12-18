@@ -21,7 +21,11 @@ a:hover {
 .display-general {
   max-width: 50%;
   margin: 0 auto;
-  padding: 250px;
+  /* padding: 250px; */
+  height: calc(100vh - 34px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .container {
@@ -54,7 +58,7 @@ a:hover {
 }
 
 .container-search {
-  padding: 35px 35px 10px;
+  padding: 55px 0 10px;
   text-align: center;
 }
 
@@ -77,6 +81,13 @@ a:hover {
 .container-btn {
   width: 100%;
   text-align: center;
+}
+
+.footer {
+  display: inline-block;
+  flex-shrink: 0;
+  text-align: center;
+  width: 100%;
 }
 
 #geo-location {
