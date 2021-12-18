@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What's the Weather</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <section class="display-general">
+      <div class="container">
+        <div class="week-weather">
+          <div class="monday">Monday 9ºC</div>
+          <div class="tuesday">Tuesday 9ºC</div>
+          <div class="wednesday">Wednesday 9ºC</div>
+          <div class="thursday">Thursday 9ºC</div>
+          <div class="friday">Friday 9ºC</div>
+          <div class="saturday">Saturday 9ºC</div>
+          <div class="sunday">Sunday 9ºC</div>
+        </div>
+
+        <div class="real-time">
+          <div class="todays-week"></div>
+          <div class="time-now"></div>
+          <h1 class="weather-now" id="real-time-weather">
+            <a href="#" class="weather-now" id="temperature"></a>
+            <a href="#" class="weather-now" id="link">ºC</a>
+          </h1>
+          <h2 class="city"></h2>
+          <br />
+          <br />
+          <span class="hourly-forecast"> Forecast next hours </span>
+        </div>
+      </div>
+      <div class="container-search">
+        <input type="search" placeholder="Search City Here" id="new-place" />
+      </div>
+      <div class="container-btn">
+        <button type="button" id="geo-location">Current Location</button>
+      </div>
+    </section>
+    <script src="src/js/script.js"></script>
+  </body>
+</html>

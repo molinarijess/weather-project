@@ -1,0 +1,94 @@
+body {
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  font-family: "Bitter", serif;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #fff;
+}
+
+a:hover {
+  color: rgba(49, 123, 163, 0.8);
+  border-bottom: 2px solid rgba(49, 123, 163, 0.8);
+}
+
+.display-general {
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 250px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.week-weather {
+  line-height: 31px;
+  padding: 7 px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.real-time {
+  align-items: center;
+  text-align: center;
+}
+
+.real-time .todays-week,
+.time-now {
+  font-size: 16px;
+  letter-spacing: 5px;
+}
+
+.hourly-forecast {
+  border: 2px solid rgb(255, 255, 255, 0.2);
+  padding: 10px 60px;
+  border-radius: 3px;
+}
+
+.container-search {
+  padding: 35px 35px 10px;
+  text-align: center;
+}
+
+.container-search input {
+  background: #fff;
+  border: 4px solid #30cfd0;
+  border-radius: 15px;
+  color: #30cfd0;
+  display: inline-block;
+  padding: 8px;
+  text-align: center;
+  cursor: text;
+}
+
+.container-search input:hover {
+  background: #35c0c0;
+  color: #fff;
+}
+
+.container-btn {
+  width: 100%;
+  text-align: center;
+}
+
+#geo-location {
+  display: inline-block;
+  padding: 2px 44px;
+  background: #30cfd0;
+  border: 4px solid #30cfd0;
+  border-radius: 200px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+#geo-location:hover {
+  box-shadow: 0 5px 16px 0 rgba(255, 255, 255, 0.24);
+}
