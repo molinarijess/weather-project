@@ -7,9 +7,11 @@ function showTodaysTemperature(response) {
   showTemperature.innerHTML = `${temperature}`;
   let cityGeoLocation = document.querySelector("h2.city");
   cityGeoLocation.innerHTML = `${geoLocationPlace.toUpperCase()}`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("class", `wi wi-owm-${response.data.weather[0].id}`);
 }
 
-function display() {
+function initialdisplay() {
   let cityDisplay = "London";
   let city = document.querySelector("h2.city");
   city.innerHTML = `${cityDisplay.toUpperCase()}`;
@@ -17,7 +19,7 @@ function display() {
   let apiSearch = `https://api.openweathermap.org/data/2.5/weather?q=${cityDisplay}&appid=${apiKey}&units=${units}`;
   axios.get(apiSearch).then(showTodaysTemperature);
 }
-display();
+initialdisplay();
 
 let searchCity = document.querySelector("#new-place");
 searchCity.addEventListener("search", changeCityName);

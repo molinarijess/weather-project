@@ -21,7 +21,6 @@ a:hover {
 .display-general {
   max-width: 50%;
   margin: 0 auto;
-  /* padding: 250px; */
   height: calc(100vh - 34px);
   display: flex;
   flex-direction: column;
