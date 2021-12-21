@@ -9,6 +9,8 @@ function showTodaysTemperature(response) {
   cityGeoLocation.innerHTML = `${geoLocationPlace.toUpperCase()}`;
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("class", `wi wi-owm-${response.data.weather[0].id}`);
+  let weatherDescription = document.querySelector("div.weather-description");
+  weatherDescription.innerHTML = `the sky today: ${response.data.weather[0].description}`;
 }
 
 function initialdisplay() {

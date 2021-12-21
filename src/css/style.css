@@ -4,6 +4,14 @@ body {
   color: #fff;
 }
 
+h1 {
+  margin: 20px 15px 0;
+}
+
+h2 {
+  margin: 3px;
+}
+
 a {
   text-decoration: none;
   color: #fff;
@@ -29,19 +37,20 @@ a:hover {
 
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .week-weather {
   line-height: 31px;
-  padding: 7 px;
+
   text-align: left;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .real-time {
   align-items: center;
   text-align: center;
+  margin-top: 10px;
 }
 
 .real-time .todays-week,
@@ -50,10 +59,16 @@ a:hover {
   letter-spacing: 5px;
 }
 
+.weather-description {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
 .hourly-forecast {
   border: 2px solid rgb(255, 255, 255, 0.2);
   padding: 10px 60px;
   border-radius: 3px;
+  font-size: 12px;
 }
 
 .container-search {
