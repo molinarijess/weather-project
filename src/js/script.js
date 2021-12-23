@@ -13,7 +13,7 @@ function showTodaysTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("class", `wi wi-owm-${response.data.weather[0].id}`);
   let weatherDescription = document.querySelector("div.weather-description");
-  weatherDescription.innerHTML = `the sky today: ${response.data.weather[0].description}`;
+  weatherDescription.innerHTML = `you can expect outside ${response.data.weather[0].description} with wind speed at ${response.data.wind.speed}`;
 }
 
 function initialdisplay() {
