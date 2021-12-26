@@ -31,6 +31,7 @@ let searchNewPlace = document.querySelector("h2.city");
 
 function changeCityName(event) {
   event.preventDefault();
+  link.innerHTML = "°C";
   if (searchCity.value === "" || searchCity.value === undefined) {
     let cityDefault = "London";
     searchNewPlace.innerHTML = `${cityDefault.toUpperCase()}`;
