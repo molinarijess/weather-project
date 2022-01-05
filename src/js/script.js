@@ -14,6 +14,7 @@ function showTodaysTemperature(response) {
   iconElement.setAttribute("class", `wi wi-owm-${response.data.weather[0].id}`);
   let weatherDescription = document.querySelector("div.weather-description");
   weatherDescription.innerHTML = `you can expect outside ${response.data.weather[0].description} with wind speed at ${response.data.wind.speed}`;
+  displayWeekForecast();
 }
 
 function initialdisplay() {
@@ -116,3 +117,21 @@ function currentTime() {
   setTimeout(currentTime, 1000);
 }
 currentTime();
+
+function displayWeekForecast() {
+  let forecastElement = document.querySelector("#week-forecast");
+  let forecastHTML = "";
+  weekDays.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="week-next-day">
+            ${day}
+            <span class="week-next-day-max">9°</span>
+            <span class="week-next-day-min">5°</span>
+          </div>
+  `;
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+}
