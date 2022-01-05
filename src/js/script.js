@@ -3,6 +3,11 @@ let lat;
 let lon;
 let units;
 
+function getForecast(coordinates) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayWeekForecast);
+}
+
 function showTodaysTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let geoLocationPlace = response.data.name;
@@ -14,7 +19,8 @@ function showTodaysTemperature(response) {
   iconElement.setAttribute("class", `wi wi-owm-${response.data.weather[0].id}`);
   let weatherDescription = document.querySelector("div.weather-description");
   weatherDescription.innerHTML = `you can expect outside ${response.data.weather[0].description} with wind speed at ${response.data.wind.speed}`;
-  displayWeekForecast();
+
+  getForecast(response.data.coord);
 }
 
 function initialdisplay() {
@@ -118,7 +124,8 @@ function currentTime() {
 }
 currentTime();
 
-function displayWeekForecast() {
+function displayWeekForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#week-forecast");
   let forecastHTML = "";
   weekDays.forEach(function (day) {
