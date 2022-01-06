@@ -4,7 +4,7 @@ let lon;
 let units;
 
 function getForecast(coordinates) {
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeekForecast);
 }
 
@@ -124,20 +124,36 @@ function currentTime() {
 }
 currentTime();
 
+function formatDayForecast(weekDays) {
+  let date = new Date(weekDays * 1000);
+  let day = date.getDay();
+  let weekDaysAbreviation = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return weekDaysAbreviation[day];
+}
+
 function displayWeekForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#week-forecast");
   let forecastHTML = "";
-  weekDays.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-  <div class="week-next-day">
-            ${day}
-            <span class="week-next-day-max">9°</span>
-            <span class="week-next-day-min">5°</span>
-          </div>
-  `;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 7) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="week-next-day">
+      ${formatDayForecast(forecastDay.dt)}
+      <span class="week-next-day-max">
+      ${Math.round(forecastDay.temp.max)}°
+      </span>
+      <span class="week-next-day-min"><b>
+      ${Math.round(forecastDay.temp.min)}°</b> 
+      </span>
+      <i class="wi wi-owm-${forecastDay.weather[0].id}"></i>
+      </div>
+      `;
+    }
   });
 
   forecastElement.innerHTML = forecastHTML;

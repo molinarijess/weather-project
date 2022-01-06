@@ -27,7 +27,7 @@ a:hover {
 }
 
 .display-general {
-  max-width: 50%;
+  max-width: 43%;
   margin: 0 auto;
   height: calc(100vh - 34px);
   display: flex;
@@ -37,14 +37,14 @@ a:hover {
 
 .container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .week-weather {
-  line-height: 31px;
-
-  text-align: left;
   font-size: 13px;
+  line-height: 23px;
+  text-align: left;
 }
 
 .real-time {
