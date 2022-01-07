@@ -3,8 +3,10 @@ let lat;
 let lon;
 let units;
 
+let unitForecast = "metric";
+
 function getForecast(coordinates) {
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${unitForecast}`;
   axios.get(apiUrl).then(displayWeekForecast);
 }
 
@@ -39,6 +41,7 @@ let searchNewPlace = document.querySelector("h2.city");
 function changeCityName(event) {
   event.preventDefault();
   link.innerHTML = "°C";
+  unitForecast = "metric";
   if (searchCity.value === "" || searchCity.value === undefined) {
     let cityDefault = "London";
     searchNewPlace.innerHTML = `${cityDefault.toUpperCase()}`;
@@ -54,6 +57,7 @@ function changeCityName(event) {
 let myLocation = document.querySelector("#geo-location");
 myLocation.addEventListener("click", () => {
   link.innerHTML = "°C";
+  unitForecast = "metric";
   let apiShowLocation = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiShowLocation).then(showTodaysTemperature);
 });
@@ -80,12 +84,14 @@ link.addEventListener("click", changeUnit);
 
 function changeTemperatureToF() {
   let unitImperial = `imperial`;
+  unitForecast = "imperial";
   let linkF = `https://api.openweathermap.org/data/2.5/weather?q=${searchNewPlace.innerHTML}&appid=${apiKey}&units=${unitImperial}`;
   axios.get(linkF).then(showTodaysTemperature);
 }
 
 function changeTemperatureToC() {
   let unitMetric = `metric`;
+  unitForecast = "metric";
   let linkC = `https://api.openweathermap.org/data/2.5/weather?q=${searchNewPlace.innerHTML}&appid=${apiKey}&units=${unitMetric}`;
   axios.get(linkC).then(showTodaysTemperature);
 }
