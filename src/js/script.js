@@ -131,6 +131,22 @@ function currentTime() {
 }
 currentTime();
 
+function timeHourly(hours) {
+  let now = new Date(hours * 1000);
+  let nextHours = now.getHours();
+  if (nextHours < 10) {
+    nextHours = "0" + nextHours;
+  }
+
+  let hourNumber = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+    22, 23, 24,
+  ];
+  // let clock = document.querySelector("spam.time");
+  // clock.innerHTML = `${currentHours}`;
+  return hourNumber[nextHours];
+}
+
 function formatDayForecast(weekDays) {
   let date = new Date(weekDays * 1000);
   let day = date.getDay();
@@ -163,4 +179,27 @@ function displayWeekForecast(response) {
   });
 
   forecastElement.innerHTML = forecastHTML;
+
+  let hourlyForecast = response.data.hourly;
+  let forecastNextHours = document.querySelector("#weather-by-hour");
+  let hourlyHTML = "";
+
+  hourlyForecast.forEach(function (forecastByHour, index) {
+    if (index < 6) {
+      hourlyHTML =
+        hourlyHTML +
+        `
+      <div class="time">
+        <p>
+          <b>${timeHourly(forecastByHour.dt)}h</b>
+        </p>
+        <span class="future-temperature">
+          ${Math.round(forecastByHour.temp)}°
+        </span>
+      </div>
+      `;
+    }
+  });
+
+  forecastNextHours.innerHTML = hourlyHTML;
 }

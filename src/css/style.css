@@ -66,15 +66,20 @@ a:hover {
 }
 
 .hourly-forecast {
-  border: 2px solid rgb(255, 255, 255, 0.2);
-  padding: 10px 60px;
-  border-radius: 3px;
-  font-size: 12px;
+  font-size: 11px;
   white-space: nowrap;
+  display: flex;
+}
+
+.time {
+  padding: 5px;
+  letter-spacing: 1px;
+  line-height: 2px;
 }
 
 .container-search {
-  padding: 55px 0 10px;
+  margin: 0 auto;
+  padding: 42px 0 5px;
   text-align: center;
 }
 
@@ -107,6 +112,7 @@ a:hover {
 }
 
 #geo-location {
+  margin: 0 auto;
   display: inline-block;
   padding: 2px 44px;
   background: #30cfd0;
