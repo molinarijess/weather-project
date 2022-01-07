@@ -47,10 +47,10 @@ a:hover {
 
 .week-weather {
   font-size: 12px;
-  line-height: 23px;
   white-space: nowrap;
   display: flex;
   padding-bottom: 40px;
+  letter-spacing: 1px;
 }
 
 .real-time .todays-week,
