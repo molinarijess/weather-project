@@ -128,6 +128,11 @@ function currentTime() {
   let clock = document.querySelector("div.time-now");
   clock.innerHTML = `${currentHours}:${currentMinute}`;
   setTimeout(currentTime, 1000);
+
+  if (currentHours < 17) {
+    document.body.style.background =
+      "radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,209,67,1) 0%, rgba(255,145,83,1) 90% )";
+  }
 }
 currentTime();
 
