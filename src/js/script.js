@@ -128,7 +128,6 @@ function formatDayForecast(weekDays) {
   let date = new Date(weekDays * 1000);
   let day = date.getDay();
   let weekDaysAbreviation = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
   return weekDaysAbreviation[day];
 }
 
@@ -138,11 +137,12 @@ function displayWeekForecast(response) {
   let forecastHTML = "";
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 7) {
+    if (index < 4) {
       forecastHTML =
         forecastHTML +
         `
       <div class="week-next-day">
+      <i class="wi wi-owm-${forecastDay.weather[0].id}"></i>
       ${formatDayForecast(forecastDay.dt)}
       <span class="week-next-day-max">
       ${Math.round(forecastDay.temp.max)}°
@@ -150,7 +150,6 @@ function displayWeekForecast(response) {
       <span class="week-next-day-min"><b>
       ${Math.round(forecastDay.temp.min)}°</b> 
       </span>
-      <i class="wi wi-owm-${forecastDay.weather[0].id}"></i>
       </div>
       `;
     }

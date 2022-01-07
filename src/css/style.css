@@ -27,30 +27,30 @@ a:hover {
 }
 
 .display-general {
-  max-width: 43%;
   margin: 0 auto;
   height: calc(100vh - 34px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: stretch;
+  align-items: center;
 }
 
 .container {
   display: flex;
-  justify-content: space-between;
+  text-align: center;
+  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
 }
 
 .week-weather {
-  font-size: 13px;
+  font-size: 12px;
   line-height: 23px;
-  text-align: left;
-}
-
-.real-time {
-  align-items: center;
-  text-align: center;
-  margin-top: 10px;
+  white-space: nowrap;
+  display: flex;
+  padding-bottom: 40px;
 }
 
 .real-time .todays-week,
@@ -60,7 +60,8 @@ a:hover {
 }
 
 .weather-description {
-  font-size: 12px;
+  max-width: fit-content;
+  font-size: 13px;
   letter-spacing: 1px;
 }
 
@@ -69,6 +70,7 @@ a:hover {
   padding: 10px 60px;
   border-radius: 3px;
   font-size: 12px;
+  white-space: nowrap;
 }
 
 .container-search {
