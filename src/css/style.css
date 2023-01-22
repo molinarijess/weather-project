@@ -51,7 +51,7 @@ a:hover {
   display: flex;
   padding-bottom: 40px;
   letter-spacing: 1px;
-  color: rgb(241, 147, 85);
+  color: rgb(248, 247, 246);
 }
 
 .real-time .todays-week,
@@ -61,6 +61,7 @@ a:hover {
 }
 
 .weather-description {
+  max-width: -moz-fit-content;
   max-width: fit-content;
   font-size: 13px;
   letter-spacing: 1px;
@@ -86,9 +87,9 @@ a:hover {
 
 .container-search input {
   background: #fff;
-  border: 1px solid rgba(241, 147, 85, 0.8);
+  border: 1px solid #4e4e4e;
   border-radius: 15px;
-  color: rgb(241, 147, 85);
+  color: #4e4e4e;
   display: inline-block;
   padding: 8px;
   text-align: center;
@@ -96,12 +97,11 @@ a:hover {
 }
 
 ::placeholder {
-  color: rgb(241, 147, 85);
+  color: #99919c;
 }
 
 .container-search input:hover {
   background: rgba(255, 255, 255, 0.781);
-  color: #fff;
 }
 
 .container-btn {
@@ -119,14 +119,14 @@ a:hover {
 #geo-location {
   margin: 0 auto;
   display: inline-block;
-  padding: -1px;
+  padding: 5px;
 
-  border: 1px solid rgba(241, 147, 85, 0.8);
-  border-radius: 200px;
+  border: 1px solid black;
+  border-radius: 5px;
   color: #fff;
   text-align: center;
   cursor: pointer;
-  color: rgb(241, 147, 85);
+  color: #99919c;
 }
 
 #geo-location:hover {
